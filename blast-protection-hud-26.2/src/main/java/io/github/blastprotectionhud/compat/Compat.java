@@ -32,12 +32,12 @@ public final class Compat {
 
     public static KeyMapping registerKey(String translationKey) {
         return KeyMappingHelper.registerKeyMapping(
-                new KeyMapping(translationKey, InputConstants.Type.KEYBOARD, InputConstants.UNKNOWN.getValue(), CATEGORY));
+                new KeyMapping(translationKey, InputConstants.Type.KEYSYM, InputConstants.UNKNOWN.getValue(), CATEGORY));
     }
 
     /** Key code as delivered by {@code KeyEvent#key()} (GLFW key codes in 26.2). */
     public static InputConstants.Key keyboardKey(int key) {
-        return InputConstants.Type.KEYBOARD.getOrCreate(key);
+        return InputConstants.Type.KEYSYM.getOrCreate(key);
     }
 
     /** Key code of the Escape key as delivered by {@code KeyEvent#key()}. */
